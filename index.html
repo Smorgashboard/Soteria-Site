@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soteria Tech Solutions LLC — Software Products</title>
+<meta name="description" content="Soteria Tech Solutions LLC is an independent software company in Washington, USA. We build and publish precision utilities and games for mobile.">
+<!-- After adding this site to Google Search Console (URL-prefix property), paste the
+     verification meta tag Google gives you on the next line: -->
+<!-- <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F4F1;
+    --ink:#171E26;
+    --blue:#2B59C3;
+    --graphite:#6B7280;
+    --hairline:#D9DCD6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(var(--hairline) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+    background-size:32px 32px;
+    color:var(--ink);
+    line-height:1.6;
+    min-height:100vh;
+  }
+  a{color:var(--blue)}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* Masthead */
+  header{
+    border-bottom:2px solid var(--ink);
+    background:var(--paper);
+  }
+  .mast{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 0;gap:16px;flex-wrap:wrap;
+  }
+  .wordmark{
+    font-family:'Archivo',sans-serif;font-weight:800;
+    font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .wordmark span{color:var(--blue)}
+  .mast a.contact{
+    font-family:'IBM Plex Mono',monospace;font-size:.85rem;
+    text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);
+    padding:8px 14px;background:#fff;
+  }
+  .mast a.contact:hover{background:var(--ink);color:var(--paper)}
+
+  /* Hero */
+  .hero{padding:88px 0 56px}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--graphite);margin-bottom:20px;
+  }
+  h1{
+    font-family:'Archivo',sans-serif;font-weight:800;
+    font-size:clamp(2.2rem,6vw,3.9rem);line-height:1.05;
+    letter-spacing:-.015em;max-width:15ch;
+  }
+  h1 em{font-style:normal;color:var(--blue)}
+  .hero p{
+    margin-top:24px;max-width:56ch;font-size:1.06rem;color:#3A4250;
+  }
+
+  /* Nameplate — the signature element. Styled like an equipment data plate. */
+  .plate{
+    margin:56px 0 72px;
+    background:#E8EAEA;
+    border:2px solid var(--ink);
+    box-shadow:6px 6px 0 var(--ink);
+    position:relative;
+    padding:28px 32px 24px;
+  }
+  .plate::before,.plate::after,
+  .plate .rivet-a,.plate .rivet-b{
+    content:'';position:absolute;width:10px;height:10px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--ink);
+  }
+  .plate::before{top:8px;left:8px}
+  .plate::after{top:8px;right:8px}
+  .plate .rivet-a{bottom:8px;left:8px}
+  .plate .rivet-b{bottom:8px;right:8px}
+  .plate h2{
+    font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.8rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--graphite);
+    border-bottom:1.5px solid var(--ink);padding-bottom:10px;margin-bottom:4px;
+  }
+  .plate dl{
+    display:grid;grid-template-columns:max-content 1fr;column-gap:28px;
+  }
+  .plate dt,.plate dd{
+    font-family:'IBM Plex Mono',monospace;font-size:.9rem;
+    padding:9px 0;border-bottom:1px solid #C9CDCB;
+  }
+  .plate dt{color:var(--graphite);text-transform:uppercase;letter-spacing:.06em;font-weight:400}
+  .plate dd{font-weight:500}
+  .plate dl > *:nth-last-child(-n+2){border-bottom:none}
+  .plate dd a{text-decoration:none}
+  .plate dd a:hover{text-decoration:underline}
+
+  /* Products */
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--graphite);
+    display:flex;align-items:center;gap:16px;margin-bottom:28px;
+  }
+  .section-label::after{content:'';flex:1;height:1.5px;background:var(--ink)}
+  .product{
+    background:#fff;border:2px solid var(--ink);padding:28px 32px;margin-bottom:20px;
+  }
+  .product .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .product h3{
+    font-family:'Archivo',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.01em;
+  }
+  .status{
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);
+    padding:4px 10px;white-space:nowrap;
+  }
+  .product p{margin-top:12px;color:#3A4250;max-width:62ch}
+  .pipeline{background:transparent;border-style:dashed;border-width:2px;color:var(--graphite)}
+  .pipeline p{color:var(--graphite)}
+
+  /* Footer */
+  footer{
+    margin-top:88px;border-top:2px solid var(--ink);
+    padding:28px 0 40px;background:var(--paper);
+  }
+  .foot{
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--graphite);
+  }
+  .foot a{color:var(--ink);text-decoration:none}
+  .foot a:hover{text-decoration:underline}
+
+  @media (max-width:560px){
+    .plate dl{grid-template-columns:1fr}
+    .plate dt{padding-bottom:0;border-bottom:none}
+    .plate dd{padding-top:2px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap mast">
+    <div class="wordmark">Soteria<span>&nbsp;Tech Solutions</span></div>
+    <a class="contact" href="mailto:hello@soteriatechsolutions.com">hello@soteriatechsolutions.com</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Independent software company — Washington, USA</p>
+    <h1>Software that gets the <em>numbers right.</em></h1>
+    <p>Soteria Tech Solutions builds and publishes mobile utilities and games. Our focus is precision tools for skilled trades — calculators built to match how the work is actually done, checked against the standards professionals are held to.</p>
+  </section>
+
+  <section aria-label="Company information" class="plate">
+    <span class="rivet-a"></span><span class="rivet-b"></span>
+    <h2>Company Data Plate</h2>
+    <dl>
+      <dt>Legal name</dt><dd>Soteria Tech Solutions LLC</dd>
+      <dt>Entity</dt><dd>Limited Liability Company — Washington, USA</dd>
+      <dt>Business</dt><dd>Software development &amp; publishing</dd>
+      <dt>Contact</dt><dd><a href="mailto:hello@soteriatechsolutions.com">hello@soteriatechsolutions.com</a></dd>
+      <dt>Web</dt><dd><a href="https://soteriatechsolutions.com">soteriatechsolutions.com</a></dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="products-heading">
+    <p class="section-label" id="products-heading">Products</p>
+
+    <article class="product">
+      <div class="row">
+        <h3>FitterCalc</h3>
+        <span class="status">In testing</span>
+      </div>
+      <p>A pipefitting and rigging calculator for the people who do the work. Takeoffs, offsets, and rigging loads computed the way the trade computes them — validated with working fitters before release.</p>
+    </article>
+
+    <article class="product pipeline">
+      <div class="row">
+        <h3>In the pipeline</h3>
+        <span class="status" style="color:var(--graphite);border-color:var(--graphite)">In development</span>
+      </div>
+      <p>Additional trade utilities, seller tools, and original games are in active development. Product announcements will appear here as they reach release.</p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Soteria Tech Solutions LLC</span>
+    <a href="mailto:hello@soteriatechsolutions.com">hello@soteriatechsolutions.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
